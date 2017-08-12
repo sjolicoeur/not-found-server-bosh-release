@@ -59,3 +59,67 @@ Succeeded
 ➜  /Users/pivotal/workspace/onboarding-week-pair-2/cf-deployment git:(master) ✗ bosh -d cf deploy --vars-store cf-deployment-vars.yml -o operations/gcp.yml -o operations/scale-to-one-az.yml cf-deployment.yml -o operations/enable-privileged-container-support.yml
 Using environment 'https://35.190.180.192:25555' as client 'admin'
 
+➜  /Users/pivotal/workspace/onboarding-week-pair-2 bbl ssh-key                                                                                       system
+➜  /Users/pivotal/workspace/onboarding-week-pair-2 bbl ssh-key > key.pem                                                                             system
+➜  /Users/pivotal/workspace/onboarding-week-pair-2 chmod 600 key.pem                                                                                 system
+➜  /Users/pivotal/workspace/onboarding-week-pair-2 bosh ssh not-found-server/cc2853f0-9325-46cb-9946-4d1ace70b405 -d cf --gw-user=jumpbox --gw-private-key=key.pem
+
+➜  /Users/pivotal/workspace/not-found-server git:(master) ✗ bosh vms                                                                                                        system
+Using environment 'https://35.190.180.192:25555' as client 'admin'
+
+
+➜  /Users/pivotal/workspace/onboarding-week-pair-2/cf-deployment git:(master) ✗ bosh -d cf deploy --vars-store cf-deployment-vars.yml -o operations/gcp.yml -o operations/scale-to-one-az.yml cf-deployment.yml -o operations/enable-privileged-container-support.yml
+Using environment 'https://35.190.180.192:25555' as client 'admin'
+
+[...]
+
+
+Task 759
+
+Task 759 | 01:34:18 | Preparing deployment: Preparing deployment (00:00:02)
+Task 759 | 01:34:24 | Preparing package compilation: Finding packages to compile (00:00:00)
+Task 759 | 01:34:24 | Updating instance not-found-server: not-found-server/cc2853f0-9325-46cb-9946-4d1ace70b405 (0) (canary) (00:01:13)
+
+Task 759 Started  Sat Aug 12 01:34:18 UTC 2017
+Task 759 Finished Sat Aug 12 01:35:37 UTC 2017
+Task 759 Duration 00:01:19
+Task 759 done
+
+Succeeded
+➜  /Users/pivotal/workspace/onboarding-week-pair-2/cf-deployment git:(master) ✗
+
+
+not-found-server/cc2853f0-9325-46cb-9946-4d1ace70b405:~# monit summary
+The Monit daemon 5.2.5 uptime: 0m
+
+Process 'pivotal-io-404'            running
+System 'system_localhost'           running
+not-found-server/cc2853f0-9325-46cb-9946-4d1ace70b405:~# monit status
+The Monit daemon 5.2.5 uptime: 1m
+
+Process 'pivotal-io-404'
+  status                            running
+  monitoring status                 monitored
+  pid                               25364
+  parent pid                        1
+  uptime                            2m
+  children                          1
+  memory kilobytes                  772
+  memory kilobytes total            3620
+  memory percent                    0.0%
+  memory percent total              0.0%
+  cpu percent                       0.0%
+  cpu percent total                 0.0%
+  data collected                    Sat Aug 12 01:36:37 2017
+
+System 'system_localhost'
+  status                            running
+  monitoring status                 monitored
+  load average                      [0.01] [0.01] [0.00]
+  cpu                               0.0%us 0.0%sy 0.1%wa
+  memory usage                      100720 kB [2.6%]
+  swap usage                        0 kB [0.0%]
+  data collected                    Sat Aug 12 01:36:37 2017
+
+not-found-server/cc2853f0-9325-46cb-9946-4d1ace70b405:~#
+
