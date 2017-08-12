@@ -1,0 +1,9 @@
+---
+name: pivotal-io-404 
+# names are the same as the folder 
+
+dependencies: 
+- nginx
+
+files: 
+- pivotal-io-404/error.html

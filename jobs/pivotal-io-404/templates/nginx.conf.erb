@@ -1,0 +1,26 @@
+worker_processes 1;
+daemon on;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+  server {
+    listen 80 default_server;
+    listen 8080 default_server;
+    server_name  _;
+    root <%= p('APP_ROOT') %>/public;
+
+    error_page 404 @err0r;
+ 
+    location / { 
+      # try_files $uri $uri/ /error.html;
+      return 404;  
+    }
+
+    location @err0r { 
+      try_files /error.html =404;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+set -e
+
+echo "creating public folder"
+mkdir -p mkdir -p "${BOSH_INSTALL_TARGET}/public" 
+
+echo "Moving error.html to public folder"
+mv pivotal-io-404/error.html "${BOSH_INSTALL_TARGET}/public" 

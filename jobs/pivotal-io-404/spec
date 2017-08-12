@@ -1,0 +1,18 @@
+---
+name: pivotal-io-404
+
+templates: 
+  ctl.erb: bin/ctl
+  nginx.conf.erb: etc/nginx.conf
+
+
+packages: 
+- pivotal-io-404
+- nginx
+
+# things that will get interpolated into the templates
+properties: 
+  pivotal-io-404:
+    description: "just a 404 app"
+  APP_ROOT: 
+    default: "/var/vcap/jobs/pivotal-io-404/packages/pivotal-io-404"

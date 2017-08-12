@@ -1,0 +1,5 @@
+check process pivotal-io-404
+  with pidfile /var/vcap/sys/run/pivotal-io-404/pivotal-io-404.pid
+  start program "/var/vcap/jobs/pivotal-io-404/bin/ctl start"
+  stop program "/var/vcap/jobs/pivotal-io-404/bin/ctl stop"
+  group vcap

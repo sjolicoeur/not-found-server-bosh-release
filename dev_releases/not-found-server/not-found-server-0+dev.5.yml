@@ -1,0 +1,21 @@
+name: not-found-server
+version: 0+dev.5
+commit_hash: f69dba9
+uncommitted_changes: false
+jobs:
+- name: pivotal-io-404
+  version: 1b43f707b154159ad5d5102562c1a7fb05235493
+  fingerprint: 1b43f707b154159ad5d5102562c1a7fb05235493
+  sha1: 084480a394543d874d2e4ea88c33763fa98bd6e9
+packages:
+- name: nginx
+  version: 5471b1c30ac49ce78d9e0b922ff33510dd2fd17c
+  fingerprint: 5471b1c30ac49ce78d9e0b922ff33510dd2fd17c
+  sha1: f8f863afb0cd6ea41f9c0143bc997511562d8eb2
+  dependencies: []
+- name: pivotal-io-404
+  version: 777ae1f0bdf2065421440f556dd5aba9989f420b
+  fingerprint: 777ae1f0bdf2065421440f556dd5aba9989f420b
+  sha1: d7a199fca8a4f3c8807df470fa638ec1ec875705
+  dependencies:
+  - nginx
