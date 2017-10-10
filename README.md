@@ -123,3 +123,23 @@ System 'system_localhost'
 
 not-found-server/cc2853f0-9325-46cb-9946-4d1ace70b405:~#
 
+
+---- more notes
+
+
+${BOSH_INSTALL_TARGET}/ == /var/vcap/jobs/<job name>
+${BOSH_INSTALL_TARGET}/<dependency name>
+
+https://github.com/sjolicoeur/not-found-server-bosh-release/blob/master/packages/nginx/packaging -> will install a compiled nginx inside of  ${BOSH_INSTALL_TARGET}/nginx to do so it will unzip 
+
+- nginx/nginx-1.12.1.tar.gz
+- nginx/pcre-8.40.tar.gz
+
+inside /var/vcap/jobs/nginx
+
+
+https://github.com/sjolicoeur/not-found-server-bosh-release/blob/master/packages/pivotal-io-404/packaging -> will add a folder public with 
+${BOSH_INSTALL_TARGET}/public/error.html in it
+
+
+https://github.com/sjolicoeur/not-found-server-bosh-release/blob/master/jobs/pivotal-io-404/spec -> specifies what is needed in packages and an env var APP_ROOT. the templates are for boot up scripts and where they should be created bin, etc. https://github.com/sjolicoeur/not-found-server-bosh-release/tree/master/jobs/pivotal-io-404/templates
