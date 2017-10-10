@@ -1,3 +1,4 @@
+```
 ➜  /Users/pivotal/workspace mkdir not-found-server                                                                                                                          
 ➜  /Users/pivotal/workspace  cd not-found-server                                                                                                                            system
 ➜  /Users/pivotal/workspace/not-found-server bosh init-release                                                                                                              system
@@ -123,7 +124,7 @@ System 'system_localhost'
 
 not-found-server/cc2853f0-9325-46cb-9946-4d1ace70b405:~#
 
-
+```
 ---- more notes
 
 
