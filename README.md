@@ -127,10 +127,11 @@ not-found-server/cc2853f0-9325-46cb-9946-4d1ace70b405:~#
 ```
 ---- more notes
 
+```
 
 ${BOSH_INSTALL_TARGET}/ == /var/vcap/jobs/<job name>
 ${BOSH_INSTALL_TARGET}/<dependency name>
-
+```
 https://github.com/sjolicoeur/not-found-server-bosh-release/blob/master/packages/nginx/packaging -> will install a compiled nginx inside of  ${BOSH_INSTALL_TARGET}/nginx to do so it will unzip 
 
 - nginx/nginx-1.12.1.tar.gz
